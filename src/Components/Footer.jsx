@@ -44,42 +44,42 @@ const Footer = () => {
         <div>
            <p className='text-xl font-bold'>STAY UP TO DATE</p>
            <div className="mt-6">
-            <div className='flex gap-4'>
+            <div className='flex gap-12'>
            <FaYoutube size={28} />
            <FaSquareXTwitter size={28} />
            <FaPinterest size={28}/>
            <FaInstagram size={28} />
            <FaFacebook size={28} />
            </div>
-           <p className='mt-4 text-xl font-bold'>
+           <p className='mt-8 text-xl font-bold'>
             EXPLORE
            </p>
-           <div className='mt-4 flex gap-4'>
-            <button className='border-[1px]  rounded w-14 px-2'>
-             <SiPuma size={32} />
+           <div className='mt-6 flex gap-12'>
+            <button className='border-[1px]  rounded h-16 w-16 px-2'>
+             <SiPuma size={28} />
             <p className='text-xs'>APP</p>
             </button>
+            
             <button className='border-[1px] rounded w-16 px-2'>
-            <SiPuma size={32} />
+            <SiPuma size={28} />
             <p className='text-xs'>TRACK</p>
             </button>
            </div>
            </div>
         </div>
         </div>
-        <div className='border-t border-white w-[90%] mx-auto' >
+         <div className='border-t border-white w-[90%] mx-auto' >
         </div>
-        <div className='flex gap-60 mt-8 ml-4  '>
-            <div className=' flex h-6 gap-4'>
-            <div className='bg-white rounded-[2px] h-6'>    
-            <img className='w-8 h-4 rounded' src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT2rA-0ZxPm7g-iQzApiZvLriUmnQtmRhEwmw&s" />
+        <div className='flex items-center justify-center gap-60 mb-8 mt-8 ml-4  '>
+            <div className=' flex h-6 gap-4'>   
+            <img className='w-8 h-4 rounded-[2px]' src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT2rA-0ZxPm7g-iQzApiZvLriUmnQtmRhEwmw&s" />
+            
+            <img className='w-8 h-4 rounded-[2px]' src="https://logos-world.net/wp-content/uploads/2020/09/Mastercard-Logo.png" />
+            <img className='w-8 h-4 rounded-[2px]' src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/American_Express_logo_%282018%29.svg/2052px-American_Express_logo_%282018%29.svg.png"/>
+            <img className='w-8 h-4 rounded-[2px]' src="https://upload.wikimedia.org/wikipedia/commons/f/fa/UPI-Logo.png" />
+            <img className='w-8 h-4 rounded-[2px]' src="https://upload.wikimedia.org/wikipedia/commons/c/cb/Rupay-Logo.png"/>
             </div>
-            <img className='w-8 h-4 rounded' src="https://logos-world.net/wp-content/uploads/2020/09/Mastercard-Logo.png" />
-            <img className='w-8 h-4 rounded' src="https://w7.pngwing.com/pngs/58/14/png-transparent-amex-card-credit-logo-logos-logos-and-brands-icon.png" />
-            <img className='w-8 h-4 rounded' src="https://upload.wikimedia.org/wikipedia/commons/f/fa/UPI-Logo.png" />
-            <img className='w-8 h-4 rounded' src="https://upload.wikimedia.org/wikipedia/commons/c/cb/Rupay-Logo.png"/>
-            </div>
-            <div className='border-[1px] w-32 h-12 flex justify-center items-center ' >
+            <div className='border-[1px] w-32 h-12 flex justify-center gap-2 items-center rounded-[2px]' >
                <img className='h-8 w-8 border-[1px] rounded-[50%]' src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS_y1qr0S_lqYb3pZaAttBqTwr-MK3PLTYd5g&s"/>
                <p className='font-bold'>INDIA</p>
             </div>
@@ -92,6 +92,7 @@ const Footer = () => {
              </p>
             </div>
         </div>
+       <div className='border-t border-white w-[90%] mx-auto' ></div>
     </div>
   )
 }
