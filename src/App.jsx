@@ -16,9 +16,9 @@ import TravelBanner from './Components/TravelBanner'
 function App() {
   return (
     <>
-      {/* <Header />
-       */}
-      <Navbar />
+      <Header />
+
+      {/* <Navbar /> */}
       <Hero />
       <Cards />
       <SecondBanner />
