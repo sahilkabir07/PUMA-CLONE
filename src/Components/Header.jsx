@@ -40,12 +40,9 @@ const Header = () => {
         <p className='font-semibold text-small'>{offers[index]}</p>
       </div>
       <div className="flex flex-wrap h-32 w-full bg-gray-800 fixed text-white shadow-md z-40 p-4">
-
-        <div className='relative sm:block sm:flex relative hidden flex gap-10 justify-center items-center fixed top-6 left-5 '>
+        <span className='mt-14' ><SiPuma size={32} /></span>
+        <div className='relative lg:block lg:flex relative hidden flex gap-10 justify-center items-center fixed top-6 left-8 '>
           <ul className=' relative flex gap-12'>
-            <li>
-              <SiPuma size={35} />
-            </li>
             <li onMouseEnter={() => setHover(true)}
               onMouseLeave={() => setHover(false)} className='group'>
               <p className='hover:underline cursor-pointer hover:decoration-yellow-500'>New</p>
@@ -71,7 +68,7 @@ const Header = () => {
 
               {newhover && (
                 <div
-                  className="absolute  left-0 mt-auto w-auto bg-black/30 backdrop-blur-lg text-white rounded-md shadow-lg p-8 h-auto"
+                  className="absolute left-0 mt-auto w-auto bg-black/30 backdrop-blur-lg text-white rounded-md shadow-lg p-8 h-auto"
                   onMouseEnter={() => setNewhover(true)}
                   onMouseLeave={() => setNewhover(false)}>
                   <motion.div
@@ -90,7 +87,7 @@ const Header = () => {
               <p className='hover:underline cursor-pointer hover:decoration-yellow-500' >Men</p>
               {menhover && (
                 <div
-                  className="absolute  left-0 mt-auto w-auto bg-black/30 backdrop-blur-lg text-white rounded-md shadow-lg p-8 h-auto"
+                  className="absolute left-0 mt-auto w-auto bg-black/30 backdrop-blur-lg text-white rounded-md shadow-lg p-8 h-auto"
                   onMouseEnter={() => SetMenhover(true)}
                   onMouseLeave={() => SetMenhover(false)}>
                   <motion.div
@@ -109,7 +106,7 @@ const Header = () => {
               <p className='hover:underline cursor-pointer hover:decoration-yellow-500' >Kids</p>
               {kidshover && (
                 <div
-                  className="absolute  left-0 mt-auto w-auto bg-black/30 backdrop-blur-lg text-white rounded-md shadow-lg p-8 h-auto"
+                  className="absolute left-0 mt-auto w-auto bg-black/30 backdrop-blur-lg text-white rounded-md shadow-lg p-8 h-auto"
                   onMouseEnter={() => setKidshover(true)}
                   onMouseLeave={() => setKidshover(false)}>
                   <motion.div
@@ -128,7 +125,7 @@ const Header = () => {
               <p className='hover:underline cursor-pointer hover:decoration-yellow-500' >Motorsport</p>
               {motorhover && (
                 <div
-                  className="absolute  left-0 mt-auto w-auto bg-black/30 backdrop-blur-lg text-white rounded-md shadow-lg p-8 h-[375px]"
+                  className="absolute left-0 mt-auto w-auto bg-black/30 backdrop-blur-lg text-white rounded-md shadow-lg p-8 h-[375px]"
                   onMouseEnter={() => setMotorhover(true)}
                   onMouseLeave={() => setMotorhover(false)}>
                   <motion.div
@@ -168,7 +165,7 @@ const Header = () => {
               </p>
               {sporthover && (
                 <div
-                  className="absolute left-0 mt-auto w-screen bg-black/30 backdrop-blur-lg text-white rounded-md shadow-lg p-8 h-[375px]"
+                  className="absolute left-0 mt-auto w-screen bg-black/30 backdrop-blur-lg text-white rounded-md shadow-lg p-8 h-auto"
                   onMouseEnter={() => setSporthover(true)}
                   onMouseLeave={() => setSporthover(false)}>
                   <motion.div
@@ -183,9 +180,9 @@ const Header = () => {
             </li>
           </ul>
         </div>
-        <div className='sm:hidden flex flex-wrap gap-10 fixed top-20 right-5  '>
+        <div className=' flex flex-wrap gap-10 fixed top-20 right-5  '>
           <ul className='flex gap-8 '>
-            <li>
+            <li onClick={HandleClick}>
               <FaBars />
             </li>
             <li>
