@@ -3,6 +3,7 @@ import Cards from './Components/Cards'
 import Footer from './Components/Footer'
 import Header from './Components/Header'
 import Hero from './Components/Hero'
+import Navbar from './Components/Navbar'
 import SecondBanner from './Components/SecondBanner'
 import SliderCards from './Components/SliderCards'
 import SoftrideBanner from './Components/SoftrideBanner'
@@ -15,7 +16,9 @@ import TravelBanner from './Components/TravelBanner'
 function App() {
   return (
     <>
-      <Header />
+      {/* <Header />
+       */}
+      <Navbar />
       <Hero />
       <Cards />
       <SecondBanner />

@@ -35,14 +35,14 @@ const Header = () => {
   }, [offers.length])
 
   return (
-    <div className='flex-col'>
+    <div className='flex-col w-screen'>
       <div className='flex justify-center items-center bg-white text-black z-50 h-12 fixed top-0 left-0 w-full'>
         <p className='font-semibold text-small'>{offers[index]}</p>
       </div>
-      <div className="flex flex-wrap h-32 w-full bg-gray-800 fixed text-white shadow-md z-40 p-4 overflow-x-hidden">
+      <div className="flex flex-wrap h-32 w-full bg-gray-800 fixed text-white shadow-md z-40 p-4">
 
         <div className='relative sm:block sm:flex relative hidden flex gap-10 justify-center items-center fixed top-6 left-5 '>
-          <ul className=' flex  gap-8'>
+          <ul className=' relative flex gap-12'>
             <li>
               <SiPuma size={35} />
             </li>
@@ -52,7 +52,7 @@ const Header = () => {
 
               {hover && (
                 <div
-                  className="absolute left-0 mt-auto max-w-screen bg-black/30 backdrop-blur-lg text-white rounded-md shadow-lg p-8 h-auto overflow-hidden"
+                  className="absolute left-0 mt-auto w-auto bg-black/30 backdrop-blur-lg text-white rounded-md shadow-lg p-8 h-auto"
                   onMouseEnter={() => setHover(true)}
                   onMouseLeave={() => setHover(false)}>
                   <motion.div
