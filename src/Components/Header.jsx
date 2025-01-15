@@ -25,6 +25,11 @@ const Header = () => {
   const [motorhover, setMotorhover] = useState(false);
   const [collabhover, setCollabhover] = useState(false);
   const [sporthover, setSporthover] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsOpen(!isOpen);
+  };
   useEffect(() => {
     const interval = setInterval(() => {
       setIndex((prev) => (prev + 1) % offers.length);
@@ -182,9 +187,9 @@ const Header = () => {
         </div>
         <div className=' flex flex-wrap gap-10 fixed top-20 right-5  '>
           <ul className='flex gap-8 '>
-            <li>
+            <button className='lg:hidden' onClick={toggleMenu}>
               <FaBars />
-            </li>
+            </button>
             <li>
               <FaSearch />
             </li>
@@ -199,6 +204,22 @@ const Header = () => {
             </li>
           </ul>
         </div>
+        {isOpen && (
+          <div className="lg:hidden flex flex-col bg-gray-800 text-white fixed top-32 w-full z-30 p-4 gap-4">
+            <a className="hover:underline">
+              New
+            </a>
+            <a className="hover:underline">
+              Collections
+            </a>
+            <a className="hover:underline">
+              About
+            </a>
+            <a className="hover:underline">
+              Contact
+            </a>
+          </div>
+        )}
       </div>
     </div>
   )
