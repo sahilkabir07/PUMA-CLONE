@@ -3,16 +3,13 @@ import Cards from './Components/Cards'
 import Footer from './Components/Footer'
 import Header from './Components/Header'
 import Hero from './Components/Hero'
-import Navbar from './Components/Navbar'
 import SecondBanner from './Components/SecondBanner'
 import SliderCards from './Components/SliderCards'
 import SoftrideBanner from './Components/SoftrideBanner'
 import Squidgame from './Components/Squidgame'
 import ThirdBanner from './Components/ThirdBanner'
 import TravelBanner from './Components/TravelBanner'
-import WinterBanner from './Components/winterBanner'
-
-
+// import WinterBanner from './Components/winterBanner'
 function App() {
   return (
     <>
@@ -21,7 +18,7 @@ function App() {
       <Cards />
       <SecondBanner />
       <ThirdBanner />
-      <WinterBanner />
+      {/* <WinterBanner /> */}
       <TravelBanner />
       <Squidgame />
       <SoftrideBanner />
