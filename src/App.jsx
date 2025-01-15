@@ -15,17 +15,17 @@ import WinterBanner from './Components/winterBanner'
 function App() {
   return (
     <>
-     <Header/>
-     <Hero/>
-     <Cards/>
-     <SecondBanner/>
-     <ThirdBanner/>    
-    <WinterBanner/>
-    <TravelBanner/>
-    <Squidgame/>
-    <SoftrideBanner/>
-    <SliderCards/>
-    <Footer/>
+      <Header />
+      <Hero />
+      <Cards />
+      <SecondBanner />
+      <ThirdBanner />
+      <WinterBanner />
+      <TravelBanner />
+      <Squidgame />
+      <SoftrideBanner />
+      <SliderCards />
+      <Footer />
     </>
   )
 }
