@@ -182,7 +182,7 @@ const Header = () => {
         </div>
         <div className=' flex flex-wrap gap-10 fixed top-20 right-5  '>
           <ul className='flex gap-8 '>
-            <li onClick={HandleClick}>
+            <li>
               <FaBars />
             </li>
             <li>
