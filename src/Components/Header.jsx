@@ -13,8 +13,9 @@ import KidsDropdown from './KidsDropdown';
 import MotorDropdown from './MotorDropdown';
 import CollabDropdown from './CollabDropdown';
 import SportsDropdown from './SportsDropdown';
+import { useNavigate } from 'react-router-dom';
 
-const Header = () => {
+const Header = ({ loadingBarRef }) => {
   const offers = ["EXTRA 5% DISCOUNT AND FREE SHIPPING ON ALL ONLINE PAYMENTS", "⚡1-DAY EXPRESS DELIEVERY NOW AVAILABLE IN PATNA", "FREE RETURNS AND FREE EXCHANGE", "SOLVE YOUR QUERIES FASTER THAN EVER. SEND US A HI! ON WHATSAPP 6392839328"];
 
   const [index, setIndex] = useState(0);
@@ -37,20 +38,45 @@ const Header = () => {
     return () => {
       clearInterval(interval);
     }
-  }, [offers.length])
+  }, [offers.length]);
 
+  const navigate = useNavigate();
+
+  const openNew = () => {
+    loadingBarRef.current.continuousStart(30, 100);
+    setTimeout(() => {
+      navigate('/New');
+      loadingBarRef.current.complete();
+    }, 1000);
+  };
+
+  const openHome = () => {
+    loadingBarRef.current.continuousStart(30, 100);
+    setTimeout(() => {
+      navigate('/');
+      loadingBarRef.current.complete();
+    }, 1000);
+  };
+  const openWomen = () => {
+    loadingBarRef.current.continuousStart(30, 100);
+    setTimeout(() => {
+      navigate('/Women');
+
+      loadingBarRef.current.complete();
+    }, 1000);
+  };
   return (
     <div className='flex-col w-screen'>
       <div className='flex justify-center items-center bg-white text-black z-50 h-12 fixed top-0 left-0 w-full'>
         <p className='font-semibold text-small'>{offers[index]}</p>
       </div>
-      <div className="flex flex-wrap h-32 w-full bg-gray-800 fixed text-white shadow-md z-40 p-4">
-        <span className='mt-14' ><SiPuma size={32} /></span>
+      <div className="flex flex-wrap h-32 w-full bg-gray-800 fixed top-0 text-white shadow-md z-40 p-4">
+        <span className='mt-14' onClick={openHome} ><SiPuma size={32} /></span>
         <div className='relative lg:block lg:flex relative hidden flex gap-10 justify-center items-center fixed top-6 left-8 '>
           <ul className=' relative flex gap-12'>
             <li onMouseEnter={() => setHover(true)}
               onMouseLeave={() => setHover(false)} className='group'>
-              <p className='hover:underline cursor-pointer hover:decoration-yellow-500'>New</p>
+              <p className='hover:underline cursor-pointer hover:decoration-yellow-500' onClick={openNew}>New</p>
 
               {hover && (
                 <div
@@ -69,7 +95,7 @@ const Header = () => {
             </li>
             <li className=' group' onMouseEnter={() => setNewhover(true)}
               onMouseLeave={() => setNewhover(false)}>
-              <p className='hover:underline cursor-pointer hover:decoration-yellow-500'>Women</p>
+              <p onClick={openWomen} className='hover:underline cursor-pointer hover:decoration-yellow-500'>Women</p>
 
               {newhover && (
                 <div

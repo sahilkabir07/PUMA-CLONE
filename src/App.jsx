@@ -1,30 +1,28 @@
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import './App.css'
-import Cards from './Components/Cards'
 import Footer from './Components/Footer'
 import Header from './Components/Header'
-import Hero from './Components/Hero'
-import SecondBanner from './Components/SecondBanner'
-import SliderCards from './Components/SliderCards'
-import SoftrideBanner from './Components/SoftrideBanner'
-import Squidgame from './Components/Squidgame'
-import ThirdBanner from './Components/ThirdBanner'
-import TravelBanner from './Components/TravelBanner'
-// import WinterBanner from './Components/winterBanner'
+import HomePage from './Components/HomePage'
+import NewPage from './Components/Trending/NewPage'
+import WomenPage from './Components/Women/WomenPage'
+import { useRef } from 'react'
+import LoadingBar from 'react-top-loading-bar'
+
 function App() {
+  const loadingBarRef = useRef(null);
   return (
-    <>
-      <Header />
-      <Hero />
-      <Cards />
-      <SecondBanner />
-      <ThirdBanner />
-      {/* <WinterBanner /> */}
-      <TravelBanner />
-      <Squidgame />
-      <SoftrideBanner />
-      <SliderCards />
+    <BrowserRouter>
+      <LoadingBar color="#f11946" ref={loadingBarRef} height={3} />
+      <Header loadingBarRef={loadingBarRef} />
+      <main>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/New" element={<NewPage />} />
+          <Route path='/Women' element={<WomenPage />} />
+        </Routes>
+      </main>
       <Footer />
-    </>
+    </BrowserRouter >
   )
 }
 
