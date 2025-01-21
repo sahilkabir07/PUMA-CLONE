@@ -232,7 +232,7 @@ const Header = ({ loadingBarRef }) => {
         </div>
         {isOpen && (
           <div className="lg:hidden flex flex-col bg-gray-800 text-white fixed top-32 w-full z-30 p-4 gap-4">
-            <a className="hover:underline">
+            <a onClick={openNew} className="hover:underline">
               New
             </a>
             <a className="hover:underline">
