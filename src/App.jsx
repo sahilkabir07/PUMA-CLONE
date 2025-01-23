@@ -7,6 +7,7 @@ import NewPage from './Components/Trending/NewPage'
 import WomenPage from './Components/Women/WomenPage'
 import { useRef } from 'react'
 import LoadingBar from 'react-top-loading-bar'
+import MenPage from './Components/Men/MenPage'
 
 function App() {
   const loadingBarRef = useRef(null);
@@ -19,6 +20,7 @@ function App() {
           <Route path="/" element={<HomePage />} />
           <Route path="/New" element={<NewPage />} />
           <Route path='/Women' element={<WomenPage />} />
+          <Route path='/Men' element={<MenPage />} />
         </Routes>
       </main>
       <Footer />

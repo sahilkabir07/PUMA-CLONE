@@ -1,9 +1,9 @@
 import React from 'react'
 import { SiPuma } from "react-icons/si";
-import { FaBars, FaSearch } from "react-icons/fa";
+import { FaBars, FaCross, FaSearch } from "react-icons/fa";
 import { FaRegHeart } from "react-icons/fa";
 import { BsCart3 } from "react-icons/bs";
-import { FaRegUser } from "react-icons/fa6";
+import { FaRegCircleXmark, FaRegUser } from "react-icons/fa6";
 import { useState, useEffect } from 'react';
 import NewDropDown from './NewDropDown';
 import { motion } from 'framer-motion';
@@ -27,6 +27,7 @@ const Header = ({ loadingBarRef }) => {
   const [collabhover, setCollabhover] = useState(false);
   const [sporthover, setSporthover] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
+  const [isSearchDrop, setIsSearchDrop] = useState(false);
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
@@ -57,6 +58,14 @@ const Header = ({ loadingBarRef }) => {
       loadingBarRef.current.complete();
     }, 1000);
   };
+
+  const openMen = () => {
+    loadingBarRef.current.continuousStart(30, 100);
+    setTimeout(() => {
+      navigate('/Men');
+      loadingBarRef.current.complete();
+    }, 1000);
+  };
   const openWomen = () => {
     loadingBarRef.current.continuousStart(30, 100);
     setTimeout(() => {
@@ -65,6 +74,14 @@ const Header = ({ loadingBarRef }) => {
       loadingBarRef.current.complete();
     }, 1000);
   };
+  const toggleSearch = () => {
+    setIsSearchDrop(!isSearchDrop)
+  }
+  const toggleMenuclose = () => {
+    setIsSearchDrop(!isSearchDrop)
+  }
+
+
   return (
     <div className='flex-col w-screen'>
       <div className='flex justify-center items-center bg-white text-black z-50 h-12 fixed top-0 left-0 w-full'>
@@ -72,7 +89,7 @@ const Header = ({ loadingBarRef }) => {
       </div>
       <div className="flex flex-wrap h-32 w-full bg-gray-800 fixed top-0 text-white shadow-md z-40 p-4">
         <span className='mt-14' onClick={openHome} ><SiPuma size={32} /></span>
-        <div className='relative lg:block lg:flex relative hidden flex gap-10 justify-center items-center fixed top-6 left-8 '>
+        <div className="hidden lg:flex gap-10 justify-center items-center top-6 left-8 relative">
           <ul className=' relative flex gap-12'>
             <li onMouseEnter={() => setHover(true)}
               onMouseLeave={() => setHover(false)} className='group'>
@@ -115,7 +132,7 @@ const Header = ({ loadingBarRef }) => {
 
             <li className=' group' onMouseEnter={() => SetMenhover(true)}
               onMouseLeave={() => SetMenhover(false)} >
-              <p className='hover:underline cursor-pointer hover:decoration-yellow-500' >Men</p>
+              <p className='hover:underline cursor-pointer hover:decoration-yellow-500' onClick={openMen} >Men</p>
               {menhover && (
                 <div
                   className="absolute left-0 mt-auto w-auto bg-black/30 backdrop-blur-lg text-white rounded-md shadow-lg p-8 h-auto"
@@ -169,10 +186,9 @@ const Header = ({ loadingBarRef }) => {
                 </div>
               )}
             </li>
-
             <li className=' group' onMouseEnter={() => setCollabhover(true)}
               onMouseLeave={() => setCollabhover(false)}>
-              <p className='hover:underline cursor-pointer hover:decoration-yellow-500'>                Collaborations
+              <p className='hover:underline cursor-pointer hover:decoration-yellow-500'> Collaborations
               </p>
               {collabhover && (
                 <div
@@ -192,7 +208,7 @@ const Header = ({ loadingBarRef }) => {
 
             <li className=' group' onMouseEnter={() => setSporthover(true)}
               onMouseLeave={() => setSporthover(false)}>
-              <p className='hover:underline cursor-pointer hover:decoration-yellow-500'>                Sports
+              <p className='hover:underline cursor-pointer hover:decoration-yellow-500'> Sports
               </p>
               {sporthover && (
                 <div
@@ -217,7 +233,7 @@ const Header = ({ loadingBarRef }) => {
               <FaBars />
             </button>
             <li>
-              <FaSearch />
+              <FaSearch onClick={toggleSearch} />
             </li>
             <li>
               <FaRegHeart />
@@ -230,6 +246,23 @@ const Header = ({ loadingBarRef }) => {
             </li>
           </ul>
         </div>
+        {isSearchDrop && (
+          <div className="absolute bg-white border left-0 w-screen h-screen border-gray-300 shadow-lg rounded p-4 mt-4 flex items-top gap-4 ">
+            <input
+              type="text"
+              placeholder="Search..."
+              className="flex-1 h-12 p-2 border border-gray-300 rounded text-black"
+            />
+            <button className="w-14 h-12 bg-blue-500 text-white rounded-full flex justify-center items-center">
+              <FaSearch />
+            </button>
+            <button onClick={toggleMenuclose} className="h-10 w-6">
+              <FaRegCircleXmark color='black' />
+            </button>
+          </div>
+
+
+        )}
         {isOpen && (
           <div className="lg:hidden flex flex-col bg-gray-800 text-white fixed top-32 w-full z-30 p-4 gap-4">
             <a onClick={openNew} className="hover:underline">
