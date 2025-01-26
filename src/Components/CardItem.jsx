@@ -1,12 +1,13 @@
 import React from 'react'
 
-const CardItem = ({src, title}) => {
+const CardItem = ({ src, title }) => {
   return (
-   <div className={`bg-[url(${src})] bg-cover bg-center `} >
-                <p className='w-40 p-8 font-bold text-white uppercase' >
-                {title} 
-                </p>
-            </div>
+    <div style={{ backgroundImage: `url(${src})` }}
+      className='bg-cover bg-center h-64 '>
+      <p className='w-40 p-8 font-bold text-white uppercase' >
+        {title}
+      </p>
+    </div>
   )
 }
 

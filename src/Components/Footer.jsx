@@ -9,7 +9,7 @@ const Footer = () => {
          <div className="container flex flex-col justify-between py-10 mx-auto space-y-8 lg:flex-row lg:space-y-0">
             <div className="lg:w-1/3">
                <p className="text-xl font-bold">Support</p>
-               <ul className="space-y-2">
+               <ul className="space-y-2 mt-4">
                   <li>Contact Us</li>
                   <li>Promotions & Sale</li>
                   <li>Track Order</li>

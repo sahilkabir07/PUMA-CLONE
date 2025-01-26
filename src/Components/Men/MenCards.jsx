@@ -3,7 +3,7 @@ import menData from "../../constants/MenProducts.json"
 const MenCards = () => {
     return (
         <div>
-            <div className='ml-4 h-40 flex-col flex justify-center'>
+            <div className='ml-12 h-40 flex-col flex justify-center'>
                 <p className='mt-10 text-4xl font-bold hover:bg-gradient-to-r hover:from-red-500 hover:to-blue-500 hover:text-transparent hover:bg-clip-text'>
                     MEN'S
                 </p>

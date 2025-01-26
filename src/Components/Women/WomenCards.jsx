@@ -4,7 +4,7 @@ import womenData from "../../constants/WomenCardsData.json"
 const WomenCards = () => {
     return (
         <div>
-            <div className='ml-4 h-40 flex-col flex justify-center'>
+            <div className='ml-12 h-40 flex-col flex justify-center'>
                 <p className='mt-10 text-4xl font-bold hover:bg-gradient-to-r hover:from-purple-500 hover:to-pink-800 hover:text-transparent hover:bg-clip-text'>
                     FOR WOMEN
                 </p>

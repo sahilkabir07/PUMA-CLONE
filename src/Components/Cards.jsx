@@ -8,7 +8,7 @@ const Cards = () => {
         <p className='text-3xl font-medium'>SAVE BIG, PLAY BIGGER</p>
       </div>
       <div className='flex items-center justify-center flex-wrap  h-64 gap-20 '>
-        <CardItem title='Running' src='https://www.puma-catchup.com/wp-content/uploads/2023/03/Header-8.png' />
+        <CardItem title='RUNNING' src='https://www.puma-catchup.com/wp-content/uploads/2023/03/Header-8.png' />
         <CardItem title='FOOTBALL' src='https://about.puma.com/sites/default/files/styles/dd_preview_slider/public/media/images/24ss_king.png?itok=7G8EzbyX' />
         <CardItem title='TRAINING' src="https://img.freepik.com/free-photo/group-people-exercising-together-outdoors_23-2151061449.jpg" />
         <CardItem title='BASKETBALL' src='https://assets.myntassets.com/dpr_1.5,q_60,w_400,c_limit,fl_progressive/assets/images/30165960/2024/12/9/40dd66a9-1e9f-4993-a6be-56f2d2162f111733746077866-Puma-Mens-Genetics-Speckle-Basketball-Shoes-1121733746077540-1.jpg' />

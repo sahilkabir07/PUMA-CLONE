@@ -70,16 +70,32 @@ const Header = ({ loadingBarRef }) => {
     loadingBarRef.current.continuousStart(30, 100);
     setTimeout(() => {
       navigate('/Women');
-
       loadingBarRef.current.complete();
     }, 1000);
   };
+  const openKids = () => {
+    loadingBarRef.current.continuousStart(30, 100);
+    setTimeout(() => {
+      navigate('/Kids');
+      loadingBarRef.current.complete();
+    }, 1000);
+  };
+  const openMotor = () => {
+    loadingBarRef.current.continuousStart(30, 100);
+    setTimeout(() => {
+      navigate('/MotorSports');
+      loadingBarRef.current.complete();
+    }, 1000);
+  };
+
+
   const toggleSearch = () => {
     setIsSearchDrop(!isSearchDrop)
   }
   const toggleMenuclose = () => {
-    setIsSearchDrop(!isSearchDrop)
-  }
+    setIsSearchDrop(false);
+    setTimeout(() => setIsOpen(false), 500);
+  };
 
 
   return (
@@ -151,7 +167,7 @@ const Header = ({ loadingBarRef }) => {
 
             <li className=' group' onMouseEnter={() => setKidshover(true)}
               onMouseLeave={() => setKidshover(false)}>
-              <p className='hover:underline cursor-pointer hover:decoration-yellow-500' >Kids</p>
+              <p className='hover:underline cursor-pointer hover:decoration-yellow-500' onClick={openKids} >Kids</p>
               {kidshover && (
                 <div
                   className="absolute left-0 mt-auto w-auto bg-black/30 backdrop-blur-lg text-white rounded-md shadow-lg p-8 h-auto"
@@ -170,7 +186,7 @@ const Header = ({ loadingBarRef }) => {
 
             <li className=' group' onMouseEnter={() => setMotorhover(true)}
               onMouseLeave={() => setMotorhover(false)}>
-              <p className='hover:underline cursor-pointer hover:decoration-yellow-500' >Motorsport</p>
+              <p className='hover:underline cursor-pointer hover:decoration-yellow-500' onClick={openMotor} >Motorsport</p>
               {motorhover && (
                 <div
                   className="absolute left-0 mt-auto w-auto bg-black/30 backdrop-blur-lg text-white rounded-md shadow-lg p-8 h-[375px]"
@@ -247,7 +263,10 @@ const Header = ({ loadingBarRef }) => {
           </ul>
         </div>
         {isSearchDrop && (
-          <div className="absolute bg-white border left-0 w-screen h-screen border-gray-300 shadow-lg rounded p-4 mt-4 flex items-top gap-4 ">
+          <div
+            className={`absolute w-screen h-screen bg-white flex p-4 gap-4 justify-items-center top-8 left-0 origin-top transform transition-all duration-300 ease-in-out ${isSearchDrop ? "scale-y-100" : "scale-y-0"
+              }`}
+          >
             <input
               type="text"
               placeholder="Search..."
@@ -257,11 +276,9 @@ const Header = ({ loadingBarRef }) => {
               <FaSearch />
             </button>
             <button onClick={toggleMenuclose} className="h-10 w-6">
-              <FaRegCircleXmark color='black' />
+              <FaRegCircleXmark color="black" />
             </button>
           </div>
-
-
         )}
         {isOpen && (
           <div className="lg:hidden flex flex-col bg-gray-800 text-white fixed top-32 w-full z-30 p-4 gap-4">
@@ -280,7 +297,7 @@ const Header = ({ loadingBarRef }) => {
           </div>
         )}
       </div>
-    </div>
+    </div >
   )
 }
 
