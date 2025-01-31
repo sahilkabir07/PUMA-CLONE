@@ -1,6 +1,6 @@
 import React from 'react'
 import { SiPuma } from "react-icons/si";
-import { FaBars, FaCross, FaSearch } from "react-icons/fa";
+import { FaBars, FaSearch } from "react-icons/fa";
 import { FaRegHeart } from "react-icons/fa";
 import { BsCart3 } from "react-icons/bs";
 import { FaRegCircleXmark, FaRegUser } from "react-icons/fa6";
@@ -112,6 +112,13 @@ const Header = ({ loadingBarRef }) => {
     loadingBarRef.current.continuousStart(30, 100);
     setTimeout(() => {
       navigate('/Contacts');
+      loadingBarRef.current.complete();
+    }, 1000);
+  };
+  const openAbout = () => {
+    loadingBarRef.current.continuousStart(30, 100);
+    setTimeout(() => {
+      navigate('/AboutUs');
       loadingBarRef.current.complete();
     }, 1000);
   };
@@ -312,10 +319,10 @@ const Header = ({ loadingBarRef }) => {
             <a onClick={openNew} className="hover:underline">
               New
             </a>
-            <a className="hover:underline">
+            <a onClick={openCollab} className="hover:underline">
               Collections
             </a>
-            <a className="hover:underline">
+            <a onClick={openAbout} className="hover:underline">
               About
             </a>
             <a onClick={openContacts} className="hover:underline">

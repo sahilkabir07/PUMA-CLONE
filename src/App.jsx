@@ -14,6 +14,7 @@ import CartPage from './Components/Cart/CartPage'
 import CollaborationPage from './Components/Collaborations/CollaborationPage'
 import SportsPage from './Components/Sports/SportsPage'
 import { ContactsPage } from './Components/Contacts/ContactsPage'
+import AboutUsPage from './Components/AboutUs/AboutUsPage'
 
 function App() {
   const loadingBarRef = useRef(null);
@@ -33,6 +34,7 @@ function App() {
           <Route path='/Collaborations' element={<CollaborationPage />} />
           <Route path='/Sports' element={<SportsPage />} />
           <Route path='/Contacts' element={<ContactsPage />} />
+          <Route path='/AboutUs' element={<AboutUsPage />} />
         </Routes>
       </main>
       <Footer />
