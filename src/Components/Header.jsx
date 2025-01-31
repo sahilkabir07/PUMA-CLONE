@@ -87,7 +87,27 @@ const Header = ({ loadingBarRef }) => {
       loadingBarRef.current.complete();
     }, 1000);
   };
-
+  const toggleCart = () => {
+    loadingBarRef.current.continuousStart(30, 100);
+    setTimeout(() => {
+      navigate('/Cart');
+      loadingBarRef.current.complete();
+    }, 1000);
+  };
+  const openCollab = () => {
+    loadingBarRef.current.continuousStart(30, 100);
+    setTimeout(() => {
+      navigate('/Collaborations');
+      loadingBarRef.current.complete();
+    }, 1000);
+  };
+  const openSports = () => {
+    loadingBarRef.current.continuousStart(30, 100);
+    setTimeout(() => {
+      navigate('/Sports');
+      loadingBarRef.current.complete();
+    }, 1000);
+  };
 
   const toggleSearch = () => {
     setIsSearchDrop(!isSearchDrop)
@@ -204,7 +224,7 @@ const Header = ({ loadingBarRef }) => {
             </li>
             <li className=' group' onMouseEnter={() => setCollabhover(true)}
               onMouseLeave={() => setCollabhover(false)}>
-              <p className='hover:underline cursor-pointer hover:decoration-yellow-500'> Collaborations
+              <p className='hover:underline cursor-pointer hover:decoration-yellow-500' onClick={openCollab}> Collaborations
               </p>
               {collabhover && (
                 <div
@@ -224,7 +244,7 @@ const Header = ({ loadingBarRef }) => {
 
             <li className=' group' onMouseEnter={() => setSporthover(true)}
               onMouseLeave={() => setSporthover(false)}>
-              <p className='hover:underline cursor-pointer hover:decoration-yellow-500'> Sports
+              <p className='hover:underline cursor-pointer hover:decoration-yellow-500' onClick={openSports}> Sports
               </p>
               {sporthover && (
                 <div
@@ -255,7 +275,7 @@ const Header = ({ loadingBarRef }) => {
               <FaRegHeart />
             </li>
             <li>
-              <BsCart3 />
+              <BsCart3 onClick={toggleCart} />
             </li>
             <li>
               <FaRegUser />

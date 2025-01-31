@@ -10,6 +10,9 @@ import LoadingBar from 'react-top-loading-bar'
 import MenPage from './Components/Men/MenPage'
 import KidsPage from './Components/Kids/KidsPage'
 import MotorSportsPage from './Components/MotorSports/MotorSportsPage'
+import CartPage from './Components/Cart/CartPage'
+import CollaborationPage from './Components/Collaborations/CollaborationPage'
+import SportsPage from './Components/Sports/SportsPage'
 
 function App() {
   const loadingBarRef = useRef(null);
@@ -25,6 +28,9 @@ function App() {
           <Route path='/Men' element={<MenPage />} />
           <Route path='/Kids' element={<KidsPage />} />
           <Route path='/MotorSports' element={<MotorSportsPage />} />
+          <Route path='/Cart' element={<CartPage />} />
+          <Route path='/Collaborations' element={<CollaborationPage />} />
+          <Route path='/Sports' element={<SportsPage />} />
         </Routes>
       </main>
       <Footer />

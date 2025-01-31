@@ -67,13 +67,13 @@ const Footer = () => {
          </div>
          <div className="flex flex-wrap justify-between items-center gap-6 py-6">
             <div className="flex gap-4">
-               <img className="h-6 w-auto" src="https://download.logo.wine/logo/Visa_Inc./Visa_Inc.-Logo.wine.png" alt="Visa logo" />
-               <img className="h-6 w-auto" src="https://brand.mastercard.com/content/dam/mccom/brandcenter/thumbnails/mc_dla_symbol_92.png" alt="Mastercard" />
-               <img className="h-6 w-auto" src="https://e7.pngegg.com/pngimages/656/817/png-clipart-mastercard-maestro-credit-card-debit-card-payment-mastercard-blue-text.png" alt="Maestro" />
-               <img className="h-6 w-auto" src="https://upload.wikimedia.org/wikipedia/commons/c/cb/Rupay-Logo.png" alt="Rupay" />
+               <img className="h-6 w-auto bg-white" src="https://download.logo.wine/logo/Visa_Inc./Visa_Inc.-Logo.wine.png" alt="Visa logo" />
+               <img className="h-6 w-auto bg-white" src="https://brand.mastercard.com/content/dam/mccom/brandcenter/thumbnails/mc_dla_symbol_92.png" alt="Mastercard" />
+               <img className="h-6 w-auto bg-white" src="https://e7.pngegg.com/pngimages/656/817/png-clipart-mastercard-maestro-credit-card-debit-card-payment-mastercard-blue-text.png" alt="Maestro" />
+               <img className="h-6 w-auto bg-white" src="https://upload.wikimedia.org/wikipedia/commons/c/cb/Rupay-Logo.png" alt="Rupay" />
             </div>
-            <div className="flex items-center gap-2">
-               <img className="rounded-full h-8 w-8" src="https://cdn.freebiesupply.com/logos/large/2x/indiac-logo-png-transparent.png" alt="India" />
+            <div className="flex items-center gap-2 border p-2">
+               <img className="rounded-full h-8 w-8 " src="https://cdn.freebiesupply.com/logos/large/2x/indiac-logo-png-transparent.png" alt="India" />
                <p>India</p>
             </div>
             <div className="text-sm">© 1968 Company Co. All rights reserved.</div>

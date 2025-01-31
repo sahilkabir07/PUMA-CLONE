@@ -1,5 +1,6 @@
 import React from 'react'
 import womenData from "../../constants/WomenCardsData.json"
+import { FaCartPlus } from 'react-icons/fa'
 
 const WomenCards = () => {
     return (
@@ -27,6 +28,7 @@ const WomenCards = () => {
                                 <h3 className="text-lg font-bold text-gray-800">{item.name}</h3>
                                 <div className="flex justify-between items-center mt-2">
                                     <p className="text-gray-800 font-semibold">{item.price}</p>
+                                    <span> <FaCartPlus /> </span>
                                 </div>
                             </div>
                         </div>
