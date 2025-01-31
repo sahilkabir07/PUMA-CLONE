@@ -108,6 +108,13 @@ const Header = ({ loadingBarRef }) => {
       loadingBarRef.current.complete();
     }, 1000);
   };
+  const openContacts = () => {
+    loadingBarRef.current.continuousStart(30, 100);
+    setTimeout(() => {
+      navigate('/Contacts');
+      loadingBarRef.current.complete();
+    }, 1000);
+  };
 
   const toggleSearch = () => {
     setIsSearchDrop(!isSearchDrop)
@@ -311,7 +318,7 @@ const Header = ({ loadingBarRef }) => {
             <a className="hover:underline">
               About
             </a>
-            <a className="hover:underline">
+            <a onClick={openContacts} className="hover:underline">
               Contact
             </a>
           </div>
