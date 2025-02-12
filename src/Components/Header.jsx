@@ -4,7 +4,7 @@ import { FaBars, FaSearch } from "react-icons/fa";
 import { FaRegHeart } from "react-icons/fa";
 import { BsCart3 } from "react-icons/bs";
 import { FaRegCircleXmark, FaRegUser } from "react-icons/fa6";
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useContext } from 'react';
 import NewDropDown from './NewDropDown';
 import { motion } from 'framer-motion';
 import WomenDropdown from './WomenDropdown';
@@ -14,6 +14,7 @@ import MotorDropdown from './MotorDropdown';
 import CollabDropdown from './CollabDropdown';
 import SportsDropdown from './SportsDropdown';
 import { useNavigate } from 'react-router-dom';
+import { SearchContext } from '../SearchContext';
 
 const Header = ({ loadingBarRef }) => {
   const offers = ["EXTRA 5% DISCOUNT AND FREE SHIPPING ON ALL ONLINE PAYMENTS", "⚡1-DAY EXPRESS DELIEVERY NOW AVAILABLE IN PATNA", "FREE RETURNS AND FREE EXCHANGE", "SOLVE YOUR QUERIES FASTER THAN EVER. SEND US A HI! ON WHATSAPP 6392839328"];
@@ -66,6 +67,7 @@ const Header = ({ loadingBarRef }) => {
       loadingBarRef.current.complete();
     }, 1000);
   };
+
   const openWomen = () => {
     loadingBarRef.current.continuousStart(30, 100);
     setTimeout(() => {
@@ -73,6 +75,7 @@ const Header = ({ loadingBarRef }) => {
       loadingBarRef.current.complete();
     }, 1000);
   };
+
   const openKids = () => {
     loadingBarRef.current.continuousStart(30, 100);
     setTimeout(() => {
@@ -80,6 +83,7 @@ const Header = ({ loadingBarRef }) => {
       loadingBarRef.current.complete();
     }, 1000);
   };
+
   const openMotor = () => {
     loadingBarRef.current.continuousStart(30, 100);
     setTimeout(() => {
@@ -87,6 +91,7 @@ const Header = ({ loadingBarRef }) => {
       loadingBarRef.current.complete();
     }, 1000);
   };
+
   const toggleCart = () => {
     loadingBarRef.current.continuousStart(30, 100);
     setTimeout(() => {
@@ -94,6 +99,7 @@ const Header = ({ loadingBarRef }) => {
       loadingBarRef.current.complete();
     }, 1000);
   };
+
   const openCollab = () => {
     loadingBarRef.current.continuousStart(30, 100);
     setTimeout(() => {
@@ -101,6 +107,7 @@ const Header = ({ loadingBarRef }) => {
       loadingBarRef.current.complete();
     }, 1000);
   };
+
   const openSports = () => {
     loadingBarRef.current.continuousStart(30, 100);
     setTimeout(() => {
@@ -108,6 +115,7 @@ const Header = ({ loadingBarRef }) => {
       loadingBarRef.current.complete();
     }, 1000);
   };
+
   const openContacts = () => {
     loadingBarRef.current.continuousStart(30, 100);
     setTimeout(() => {
@@ -115,6 +123,7 @@ const Header = ({ loadingBarRef }) => {
       loadingBarRef.current.complete();
     }, 1000);
   };
+
   const openAbout = () => {
     loadingBarRef.current.continuousStart(30, 100);
     setTimeout(() => {
@@ -131,6 +140,27 @@ const Header = ({ loadingBarRef }) => {
     setTimeout(() => setIsOpen(false), 500);
   };
 
+  const { setSearchQuery, setSearchResults, allProducts } = useContext(SearchContext);
+  const [query, setQuery] = useState("");
+
+  const handleSearch = () => {
+    setSearchQuery(query);
+
+    const results = allProducts.filter(product =>
+      product.name.toLowerCase().includes(query.toLowerCase())
+    );
+
+    setSearchResults(results);
+    navigate("/search");
+  };
+
+  const toggleSignUp = () => {
+    loadingBarRef.current.continuousStart(30, 100);
+    setTimeout(() => {
+      navigate('/AuthPage');
+      loadingBarRef.current.complete();
+    }, 1000);
+  };
 
   return (
     <div className='flex-col w-screen'>
@@ -292,7 +322,7 @@ const Header = ({ loadingBarRef }) => {
               <BsCart3 onClick={toggleCart} />
             </li>
             <li>
-              <FaRegUser />
+              <FaRegUser onClick={toggleSignUp} />
             </li>
           </ul>
         </div>
@@ -305,8 +335,10 @@ const Header = ({ loadingBarRef }) => {
               type="text"
               placeholder="Search..."
               className="flex-1 h-12 p-2 border border-gray-300 rounded text-black"
+              onChange={(e) => setQuery(e.target.value)}
+
             />
-            <button className="w-14 h-12 bg-blue-500 text-white rounded-full flex justify-center items-center">
+            <button onClick={handleSearch} className="w-14 h-12 bg-blue-500 text-white rounded-full flex justify-center items-center">
               <FaSearch />
             </button>
             <button onClick={toggleMenuclose} className="h-10 w-6">
