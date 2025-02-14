@@ -2,7 +2,7 @@ import React from 'react'
 
 const SoftrideBanner = () => {
     return (
-        <div className='bg-fixed bg-[url("https://cdn.sanity.io/images/qa41whrn/prod/1af61288fbce247d372351b556ba46c92ad22569-2000x1125.png")] bg-cover bg-top mt-16 w-screen h-screen relative'>
+        <div className='bg-fixed h-[50vh] md:h-screen w-screen  bg-cover bg-center flex-col  bg-[url("https://cdn.sanity.io/images/qa41whrn/prod/1af61288fbce247d372351b556ba46c92ad22569-2000x1125.png")]  mt-16   relative'>
             <div className='absolute bottom-20 right-10'>
                 <p className='text-white font-bold text-3xl'>
                     SOFTRIDE

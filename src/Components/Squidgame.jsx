@@ -2,7 +2,7 @@ import React from 'react'
 
 const Squidgame = () => {
   return (
-    <div className='bg-fixed relative mt-8 w-screen h-screen bg-[url("https://www.fashiontrendsetter.com/v2/wp-content/uploads/2024/12/PUMA-X-Netflix-Squid-Game-Collection-01.jpg")] bg-cover bg-top' >
+    <div className='  h-[50vh] md:h-screen w-screen bg-fixed bg-center  flex-col relative mt-8  bg-[url("https://www.fashiontrendsetter.com/v2/wp-content/uploads/2024/12/PUMA-X-Netflix-Squid-Game-Collection-01.jpg")] bg-cover ' >
       <div className='absolute bottom-20 left-10'>
         <p className='text-white text-3xl font-bold'>
           PUMA x SQUID GAME
