@@ -16,7 +16,7 @@ const CartItems = () => {
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 p-4">
                         {cartItems.map((item) => (
                             <div key={item.id} className="bg-white shadow-md rounded-lg p-4 flex flex-col transform transition duration-300 hover:scale-105">
-                                <img src={item.imageUrl} alt={item.name} className="h-32 w-full object-cover rounded-md" />
+                                <img src={item.img} alt={item.name} className="h-32 w-full object-cover rounded-md" />
                                 <h3 className="text-lg font-medium mt-2">{item.name}</h3>
                                 <p className="text-gray-600">Price: {item.price}</p>
                                 <p className="text-gray-600">Quantity: {item.quantity}</p>

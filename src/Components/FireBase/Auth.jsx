@@ -14,14 +14,16 @@ export const signUp = async (email, password) => {
   }
 };
 
-export const login = async (email, password) => {
-  try {
-    await signInWithEmailAndPassword(auth, email, password);
-    alert("Login successful!");
-  } catch (error) {
-    alert(error.message);
-  }
+export const login = (auth, email, password) => {
+  signInWithEmailAndPassword(auth, email, password)
+    .then((userCredential) => {
+      console.log("User logged in:", userCredential.user);
+    })
+    .catch((error) => {
+      console.error("Login failed! Code:", error.code, "Message:", error.message);
+    });
 };
+
 
 export const logout = async () => {
   try {

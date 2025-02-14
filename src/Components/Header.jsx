@@ -145,14 +145,15 @@ const Header = ({ loadingBarRef }) => {
 
   const handleSearch = () => {
     setSearchQuery(query);
-
     const results = allProducts.filter(product =>
       product.name.toLowerCase().includes(query.toLowerCase())
     );
 
     setSearchResults(results);
+    setIsSearchDrop(false); // Hide the search field after searching
     navigate("/search");
   };
+
 
   const toggleSignUp = () => {
     loadingBarRef.current.continuousStart(30, 100);
@@ -338,9 +339,14 @@ const Header = ({ loadingBarRef }) => {
               onChange={(e) => setQuery(e.target.value)}
 
             />
-            <button onClick={handleSearch} className="w-14 h-12 bg-blue-500 text-white rounded-full flex justify-center items-center">
+            <button
+              onClick={handleSearch}
+              className="w-14 h-12 bg-blue-500 text-white rounded-full flex justify-center items-center 
+             transition-all duration-300 hover:bg-blue-600 active:bg-blue-700 active:scale-90"
+            >
               <FaSearch />
             </button>
+
             <button onClick={toggleMenuclose} className="h-10 w-6">
               <FaRegCircleXmark color="black" />
             </button>
@@ -352,7 +358,14 @@ const Header = ({ loadingBarRef }) => {
               New
             </a>
             <a onClick={openCollab} className="hover:underline">
-              Collections
+              Collab
+            </a>
+            <a onClick={openMen} className="hover:underline">
+              Men
+            </a><a onClick={openWomen} className="hover:underline">
+              Women
+            </a><a onClick={openKids} className="hover:underline">
+              Kids
             </a>
             <a onClick={openAbout} className="hover:underline">
               About

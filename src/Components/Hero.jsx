@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom';
 
 const Hero = () => {
   const [timeLeft, setTimeLeft] = useState(3600);
@@ -32,14 +33,39 @@ bg-[url("https://images.unsplash.com/photo-1572295293833-2d7556b54324?w=1000&aut
 
 
       <div className='absolute top-1/2 left-0 transform -translate-y-1/2 text-white p-4 space-y-4 md:mt-24'>
-        <div>
-          <p className='text-3xl font-bold ml-8 md:ml-16'>FLAT 40% OFF</p>
-          <p className='text-xl font-medium'>+ EXTRA 5% OFF ON ONLINE PAYMENTS</p>
+        <div className="group">
+          <p className="text-3xl font-bold ml-8 md:ml-16 transition-all duration-300 group-hover:text-orange-500 group-hover:scale-110">
+            FLAT 40% OFF
+          </p>
+          <p className="text-xl font-medium transition-all duration-300 group-hover:text-blue-500 group-hover:scale-105">
+            + EXTRA 5% OFF ON ONLINE PAYMENTS
+          </p>
         </div>
+
         <div className='flex gap-4'>
-          <button className='bg-white text-black flex items-center justify-center h-8 w-28 font-bold'>FOR HIM</button>
-          <button className='bg-white text-black flex items-center justify-center h-8 w-28 font-bold'>FOR HER</button>
-          <button className='bg-white text-black flex items-center justify-center h-8 w-28 font-bold'>FOR KIDS</button>
+          <div className="flex gap-4">
+            <Link to="/Men">
+              <button className="bg-white text-black border flex items-center justify-center h-8 w-28 font-bold 
+      transition-all duration-300 hover:bg-black hover:text-white hover:scale-105">
+                FOR HIM
+              </button>
+            </Link>
+
+            <Link to="/Women">
+              <button className="bg-white text-black border flex items-center justify-center h-8 w-28 font-bold 
+      transition-all duration-300 hover:bg-black hover:text-white hover:scale-105">
+                FOR HER
+              </button>
+            </Link>
+
+            <Link to="/Kids">
+              <button className="bg-white text-black border flex items-center justify-center h-8 w-28 font-bold 
+      transition-all duration-300 hover:bg-black hover:text-white hover:scale-105">
+                FOR KIDS
+              </button>
+            </Link>
+          </div>
+
         </div>
       </div>
 

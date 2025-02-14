@@ -61,7 +61,7 @@ const TrendingCards = () => {
                         >
                             <div className="text-center">
                                 <img
-                                    src={item.imageUrl}
+                                    src={item.img}
                                     className="w-full h-48 object-cover rounded-md mt-2"
                                 />
                             </div>

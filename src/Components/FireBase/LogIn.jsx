@@ -8,6 +8,8 @@ const Login = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    console.log("Email Type:", typeof email, "Value:", email);
+    console.log("Password Type:", typeof password, "Value:", password);
     login(auth, email, password);
   };
 
@@ -27,8 +29,7 @@ const Login = () => {
             type="password"
             placeholder="Password"
             className="p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all duration-300 mb-4"
-            onChange={(e) => setPassword(e.target.value)}
-            required
+            onChange={(e) => setPassword(e.target.value)} required
           />
           <button
             type="submit"
