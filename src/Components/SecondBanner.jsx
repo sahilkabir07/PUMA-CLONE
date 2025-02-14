@@ -2,7 +2,7 @@ import React from 'react'
 
 const SecondBanner = () => {
   return (
-    <div className='relative mt-8 w-screen bg-fixed h-screen bg-[url("https://about.puma.com/sites/default/files/styles/dd_hero_tablet/public/media/news/images/aw24-ts-football-fpf-lookup-16x19.jpg?itok=SgqMe8Pm")] bg-cover bg-center' >
+    <div className='relative h-[50vh] md:h-screen w-screen bg-fixed bg-cover bg-center flex-col  bg-[url("https://about.puma.com/sites/default/files/styles/dd_hero_tablet/public/media/news/images/aw24-ts-football-fpf-lookup-16x19.jpg?itok=SgqMe8Pm")] ' >
       <div className='absolute bottom-20 left-10'>
         <p className='text-white text-3xl'>
           COMING SOON

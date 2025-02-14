@@ -28,7 +28,7 @@ const Hero = () => {
   };
 
   return (
-    <div className='relative h-[50vh] md:h-screen w-screen bg-fixed bg-cover bg-center flex-col  
+    <div className=' relative h-[50vh] md:h-screen w-screen bg-fixed bg-cover bg-center flex-col  
 bg-[url("https://images.unsplash.com/photo-1572295293833-2d7556b54324?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cHVtYXxlbnwwfHwwfHx8MA%3D%3D")] text-white'>
 
 
