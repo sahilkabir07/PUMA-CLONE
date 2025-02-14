@@ -150,7 +150,7 @@ const Header = ({ loadingBarRef }) => {
     );
 
     setSearchResults(results);
-    setIsSearchDrop(false); // Hide the search field after searching
+    setIsSearchDrop(false);
     navigate("/search");
   };
 
