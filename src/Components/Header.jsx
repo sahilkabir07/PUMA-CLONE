@@ -163,6 +163,14 @@ const Header = ({ loadingBarRef }) => {
     }, 1000);
   };
 
+  const toggleLike = () => {
+    loadingBarRef.current.continuousStart(30, 100);
+    setTimeout(() => {
+      navigate('/Liked');
+      loadingBarRef.current.complete();
+    }, 1000);
+  };
+
   return (
     <div className='flex-col w-screen'>
       <div className='flex justify-center items-center bg-white text-black z-50 h-12 fixed top-0 left-0 w-full'>
@@ -317,7 +325,7 @@ const Header = ({ loadingBarRef }) => {
               <FaSearch onClick={toggleSearch} />
             </li>
             <li>
-              <FaRegHeart />
+              <FaRegHeart onClick={toggleLike} />
             </li>
             <li>
               <BsCart3 onClick={toggleCart} />

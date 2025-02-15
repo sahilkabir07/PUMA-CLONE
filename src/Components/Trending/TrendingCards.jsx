@@ -1,48 +1,12 @@
-import React, { useState } from 'react'
-import trendingData from "../../constants/TrendingProducts.json"
-import { FaCartPlus, FaThumbsUp } from 'react-icons/fa'
-import useCart from '../../AddToCart'
+import React from 'react';
+import trendingData from "../../constants/TrendingProducts.json";
+import { FaCartPlus, FaRegHeart, FaHeart } from 'react-icons/fa';
+import useCart from '../../AddToCart';
+import useLikes from '../Liked/Liked';
 
 const TrendingCards = () => {
     const { addToCart } = useCart();
-    const [addedItems, setAddedItems] = useState([]);
-    const [showThumbsUp, setShowThumbsUp] = useState([]);
-
-    const handleAddToCart = (item) => {
-        if (addedItems[item.id]) {
-            removeFromCart(item);
-            setAddedItems((prevState) => ({
-                ...prevState,
-                [item.id]: false,
-            }));
-            setShowThumbsUp((prevState) => ({
-                ...prevState,
-                [item.id]: false,
-            }));
-        } else {
-            addToCart(item);
-            setAddedItems((prevState) => ({
-                ...prevState,
-            }));
-
-            setShowThumbsUp((prevState) => ({
-                ...prevState,
-                [item.id]: true,
-            }));
-
-            setTimeout(() => {
-                setShowThumbsUp((prevState) => ({
-                    ...prevState,
-                    [item.id]: false,
-                }));
-                setAddedItems((prevState) => ({
-                    ...prevState,
-                    [item.id]: false,
-                }));
-            }, 3000);
-        }
-    };
-
+    const { likedItems, toggleLike } = useLikes();
 
     return (
         <div>
@@ -50,13 +14,15 @@ const TrendingCards = () => {
                 <p className='mt-10 text-4xl font-bold hover:bg-gradient-to-r hover:from-red-500 hover:to-blue-500 hover:text-transparent hover:bg-clip-text'>
                     NEW SEASON
                 </p>
-                <p className='font-bold text-xl mt-10 hover:bg-gradient-to-r hover:from-yellow-500 hover:to-blue-500 hover:text-transparent hover:bg-clip-text'>709 Products</p>
+                <p className='font-bold text-xl mt-10 hover:bg-gradient-to-r hover:from-yellow-500 hover:to-blue-500 hover:text-transparent hover:bg-clip-text'>
+                    709 Products
+                </p>
             </div>
             <div className='flex'>
-                <div className="flex flex-wrap gap-4 p-4  items-center justify-center ">
+                <div className="flex flex-wrap gap-4 p-4 items-center justify-center">
                     {trendingData.map((item) => (
                         <div
-                            className="w-[250px] bg-white shadow-md rounded-lg p-4 flex flex-col transform transition-transform duration-300 hover:scale-110 "
+                            className="w-[250px] bg-white shadow-md rounded-lg p-4 flex flex-col transform transition-transform duration-300 hover:scale-110"
                             key={item.id}
                         >
                             <div className="text-center">
@@ -69,16 +35,23 @@ const TrendingCards = () => {
                                 <h3 className="text-lg font-bold text-gray-800">{item.name}</h3>
                                 <div className="flex justify-between items-center mt-2">
                                     <p className="text-gray-800 font-semibold">{item.price}</p>
-                                    <span>
-                                        {showThumbsUp[item.id] ? (
-                                            <FaThumbsUp className='text-green-500' />
+                                    <div className="flex gap-3">
+                                        <FaCartPlus
+                                            className='hover:text-red-500 cursor-pointer'
+                                            onClick={() => addToCart(item)}
+                                        />
+                                        {likedItems[item.id] ? (
+                                            <FaHeart
+                                                className="text-red-500 cursor-pointer"
+                                                onClick={() => toggleLike(item)}
+                                            />
                                         ) : (
-                                            <FaCartPlus
-                                                className='hover:text-red-500 cursor-pointer'
-                                                onClick={() => handleAddToCart(item)}
+                                            <FaRegHeart
+                                                className="text-gray-500 cursor-pointer"
+                                                onClick={() => toggleLike(item)}
                                             />
                                         )}
-                                    </span>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -86,7 +59,7 @@ const TrendingCards = () => {
                 </div>
             </div>
         </div>
-    )
-}
+    );
+};
 
 export default TrendingCards;

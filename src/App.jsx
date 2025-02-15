@@ -23,6 +23,7 @@ import AuthPage from './Components/FireBase/AuthPage';
 import Login from './Components/FireBase/LogIn';
 import Signup from './Components/FireBase/SignUp';
 import LogoutButton from './Components/FireBase/LogOut';
+import LikedPage from './Components/Liked/LikedPage';
 
 function App() {
   const [user, setUser] = useState(null);
@@ -65,6 +66,7 @@ function App() {
             <Route path="/Collaborations" element={user ? <CollaborationPage /> : <Navigate to="/login" />} />
             <Route path="/Sports" element={user ? <SportsPage /> : <Navigate to="/login" />} />
             <Route path="/Contacts" element={user ? <ContactsPage /> : <Navigate to="/login" />} />
+            <Route path="/Liked" element={user ? <LikedPage /> : <Navigate to="/login" />} />
             <Route path="/AboutUs" element={user ? <AboutUsPage /> : <Navigate to="/login" />} />
             <Route path="/search" element={user ? <SearchResults /> : <Navigate to="/login" />} />
             <Route path="/login" element={user ? <Navigate to="/" /> : <Login />} />
