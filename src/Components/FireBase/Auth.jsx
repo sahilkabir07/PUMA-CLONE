@@ -1,35 +1,42 @@
-import {
-  createUserWithEmailAndPassword,
-  signInWithEmailAndPassword,
-  signOut,
-} from "firebase/auth";
+import { createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut } from "firebase/auth";
 import { auth } from "./FireBase";
+import { toast } from "react-toastify";
 
 export const signUp = async (email, password) => {
   try {
     await createUserWithEmailAndPassword(auth, email, password);
-    alert("Signup successful!");
+    toast.success("Signup successful! 🤗🎉");
   } catch (error) {
-    alert(error.message);
+    toast.error(`Signup failed: ${error.message}`);
   }
 };
 
-export const login = (auth, email, password) => {
-  signInWithEmailAndPassword(auth, email, password)
-    .then((userCredential) => {
-      console.log("User logged in:", userCredential.user);
-    })
-    .catch((error) => {
-      console.error("Login failed! Code:", error.code, "Message:", error.message);
-    });
+export const login = async (email, password) => {
+  console.log("Raw Inputs - Email:", email, "Password:", password);
+
+  if (!email || !password) {
+    toast.error("Please enter both email and password!");
+    return;
+  }
+  try {
+    const userCredential = await signInWithEmailAndPassword(auth, email, password);
+    toast.success(`Welcome back, ${userCredential.user.email}! 🚀`);
+  } catch (error) {
+    console.error("Firebase Login Error:", error.code, error.message);
+    toast.error(`Login failed: ${error.message}`);
+  }
 };
+
+
+
+
 
 
 export const logout = async () => {
   try {
     await signOut(auth);
-    alert("Logged out successfully!");
+    toast.info("Logged out successfully!");
   } catch (error) {
-    alert(error.message);
+    toast.error(`Logout failed: ${error.message}`);
   }
 };

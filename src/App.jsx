@@ -1,5 +1,7 @@
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import { BrowserRouter, Route, Routes, Navigate } from 'react-router-dom';
-import { useState, useEffect, useContext, useRef } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import './App.css';
 import Footer from './Components/Footer';
 import Header from './Components/Header';
@@ -16,7 +18,7 @@ import { ContactsPage } from './Components/Contacts/ContactsPage';
 import AboutUsPage from './Components/AboutUs/AboutUsPage';
 import { SearchProvider } from './SearchContext';
 import SearchResults from './SearchResults';
-import { onAuthStateChanged, signOut } from 'firebase/auth';
+import { onAuthStateChanged } from 'firebase/auth';
 import { auth } from './Components/FireBase/FireBase';
 import LoadingBar from 'react-top-loading-bar';
 import AuthPage from './Components/FireBase/AuthPage';
@@ -24,6 +26,9 @@ import Login from './Components/FireBase/LogIn';
 import Signup from './Components/FireBase/SignUp';
 import LogoutButton from './Components/FireBase/LogOut';
 import LikedPage from './Components/Liked/LikedPage';
+
+
+
 
 function App() {
   const [user, setUser] = useState(null);
@@ -37,23 +42,20 @@ function App() {
     return () => unsubscribe();
   }, []);
 
-  const handleLogout = () => {
-    signOut(auth)
-      .then(() => {
-        console.log('Logged out');
-        setUser(null);
-      })
-      .catch((error) => {
-        console.error('Error logging out: ', error.message);
-      });
-  };
 
   return (
     <SearchProvider>
       <BrowserRouter>
         <LoadingBar color="#f11946" ref={loadingBarRef} height={3} />
+        <ToastContainer position="top-center"
+          autoClose={3000}
+          hideProgressBar={false}
+          newestOnTop={true}
+          closeOnClick
+          pauseOnHover
+          draggable
+          theme="colored" />
         <Header loadingBarRef={loadingBarRef} />
-
         <main>
           <Routes>
             <Route path="/" element={user ? <HomePage /> : <Navigate to="/login" />} />
@@ -75,9 +77,6 @@ function App() {
             <Route path='/AuthPage' element={<AuthPage />} />
           </Routes>
         </main>
-
-        {user && <button onClick={handleLogout}>Logout</button>}
-
         <Footer />
       </BrowserRouter>
     </SearchProvider>

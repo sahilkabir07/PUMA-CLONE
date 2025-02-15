@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { login } from "./Auth";
-import { auth } from "./FireBase";
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -10,7 +9,7 @@ const Login = () => {
     e.preventDefault();
     console.log("Email Type:", typeof email, "Value:", email);
     console.log("Password Type:", typeof password, "Value:", password);
-    login(auth, email, password);
+    login(email, password);
   };
 
   return (
