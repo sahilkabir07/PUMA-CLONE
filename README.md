@@ -1,5 +1,5 @@
 # PUMA CLONE
-[LIVE LINK](https://puma-clone-sp9z.vercel.app/)
+[LIVE LINK](https://puma-clone-seven.vercel.app/)
 
 # ✨ Puma Website Clone
 
