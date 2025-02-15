@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Squidgame = () => {
   return (
@@ -10,9 +11,10 @@ const Squidgame = () => {
         <p className='text-white text-xl'>
           MINGLE EDITION
         </p>
-        <button className='mt-4 bg-white w-24 h-10 font-bold'>
+        <Link to="/Collaborations">  <button className='mt-4 bg-white w-24 h-10 font-bold'>
           SHOP NOW
         </button>
+        </Link>
       </div>
     </div>
   )

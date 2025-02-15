@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const SecondBanner = () => {
   return (
@@ -8,13 +9,14 @@ const SecondBanner = () => {
           COMING SOON
         </p>
         <p className='text-white text-xl'>
-          PORTUGAL KITS DROPPING JAN 7
+          PORTUGAL KITS DROPPING JUNE 7
         </p>
-        <button className='mt-4 bg-white w-24 h-10 font-medium'>
+        <Link to="/AuthPage">  <button className='mt-4 bg-white w-24 h-10 font-medium'>
           SIGN UP
         </button>
+        </Link>
       </div>
-    </div>
+    </div >
   )
 }
 

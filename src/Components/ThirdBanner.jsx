@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import React from 'react';
 
 const ThirdBanner = () => {
@@ -13,9 +14,11 @@ const ThirdBanner = () => {
       <div className="flex flex-col items-center justify-center w-full md:w-1/3 bg-gray-600 py-12 text-white text-center">
         <p className="text-3xl font-bold">MMQ</p>
         <p className="mt-2">HOLIDAY-READY WARDROBE</p>
-        <button className="mt-4 bg-black text-white w-28 h-10 rounded-md hover:bg-gray-800 transition">
-          SHOP NOW
-        </button>
+        <Link to="/New">
+          <button className="mt-4 bg-black text-white w-28 h-10 rounded-md hover:bg-gray-800 transition">
+            SHOP NOW
+          </button>
+        </Link>
       </div>
 
 

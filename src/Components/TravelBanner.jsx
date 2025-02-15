@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import { Link } from 'react-router-dom';
 
 const TravelBanner = () => {
     return (
@@ -10,9 +11,10 @@ const TravelBanner = () => {
                 <p className='text-white text-xl'>
                     TAILORED FOR EVERY ADVENTURE
                 </p>
-                <button className='bg-white w-24 h-10 font-bold mt-4'>
+                <Link to="/MotorSports"> <button className='bg-white w-24 h-10 font-bold mt-4'>
                     SHOP NOW
                 </button>
+                </Link>
             </div>
         </div>
     )

@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const SoftrideBanner = () => {
     return (
@@ -10,9 +11,10 @@ const SoftrideBanner = () => {
                 <p className='text-white text-xl'>
                     ULTIMATE CUSHIONING AND COMFORT
                 </p>
-                <button className='bg-white w-24 h-10 font-bold mt-4'>
+                <Link to="/Sports">  <button className='bg-white w-24 h-10 font-bold mt-4'>
                     SHOP NOW
                 </button>
+                </Link>
             </div>
         </div>
     )
