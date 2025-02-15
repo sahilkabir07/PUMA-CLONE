@@ -34,8 +34,8 @@ A fully functional **Puma eCommerce website clone** built with **React, Firebase
 ### **Items Page**
 ![Items Page](ScreenShots/Items.png)
 
-### **Abouta Us Page**
-![About Us Page](ScreenShots/AboutUs.png)
+### **About Us Page**
+![About Us Page](ScreenShots/AboutUS.png)
 
 ## ⚙️ Tech Stack
 
