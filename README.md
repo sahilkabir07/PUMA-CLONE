@@ -21,9 +21,21 @@ A fully functional **Puma eCommerce website clone** built with **React, Firebase
 
 ## 🖼️ Screenshots
 
-_(Include relevant screenshots of your homepage, login page, cart page, etc.)_
 
----
+### **Homepage**
+![Homepage](ScreenShots/HomePage.png)
+
+### **Login Page**
+![Login Page](ScreenShots/Login.png)
+
+### **Cart Page**
+![Cart Page](ScreenShots/Cart.png)
+
+### **Items Page**
+![Items Page](ScreenShots/Items.png)
+
+### **Abouta Us Page**
+![About Us Page](ScreenShots/AboutUs.png)
 
 ## ⚙️ Tech Stack
 
@@ -64,7 +76,7 @@ VITE_MEASUREMENT_ID=your_firebase_measurement_id
 ```bash
 npm run dev
 ```
-Your project should now be running on **`http://localhost:5173`** (default for Vite).
+Your project should now be running on **`http://localhost:5173`** 
 
 ---
 
@@ -134,9 +146,9 @@ Contributions are welcome! If you'd like to contribute:
 ---
 
 ## 📩 Contact
-🔹 **Your Name**  
-🔹 **Email:** your-email@example.com  
-🔹 **GitHub:** [your-username](https://github.com/your-username)  
+🔹 **Sahil Akhtar**  
+🔹 **Email:** sahilakthar8986@gmail.com  
+🔹 **GitHub:** [sahilkabir07](https://github.com/sahilkabir07)  
 
 ---
 
